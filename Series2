@@ -1,0 +1,49 @@
+/*
+Output:-
+enter the value of x : 
+2
+enter the value of n : 
+10
+2.0/1 -4.0/3 8.0/5 -16.0/7 32.0/9 
+ sum = 3.5365079365079364
+
+*/
+package SeriesPattern;
+
+import java.util.Scanner;
+
+public class Series1 {
+	static double power(int base,int expo) {
+		double pow=1;
+		while(expo!=0) {
+			pow=pow*base;
+			expo--;
+		}
+		return pow; 
+	}
+	static double series(int n,int x) {
+		int i,j,a=1;
+		double sum=0,term;
+		for(i=1,j=1;i<=n;i=i+2,j++) {
+			term=power(x,j)/i *a;
+			System.out.print(power(x, j)*a+ "/"+ i +" ");
+			sum=sum+term;
+			a=a*-1;
+			//System.out.println(sum);
+		}
+		
+		return sum;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int x,n;
+		System.out.println("enter the value of x : ");
+		x=sc.nextInt();
+		System.out.println("enter the value of n : ");
+		n=sc.nextInt();
+		double sum= series(n, x);
+		System.out.print("\n sum = "+ sum);
+		sc.close();
+	}
+}
