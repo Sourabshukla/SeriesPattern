@@ -38,3 +38,39 @@ public class Series2 {
 		System.out.println("\n"+"sum is "+series(n));
 	}
 }
+
+
+/* 
+by using single for loop
+*/
+
+package SeriesPattern;
+import java.util.Scanner;
+public class Series3 {
+		static double series (int n) {
+			double term,num=0,den=1,sum=0;
+			int i;
+			for(i=1;i<=n;i++) {
+				
+				
+					num=num+i;
+					den=den*i;
+				
+				
+				System.out.print(num +"/"+den+" ");
+
+				term=num/den;
+				sum=sum+term;
+				//System.out.println(sum);
+			}
+			return sum;
+		}  
+		public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			System.out.println("enter a number : ");
+			int n=sc.nextInt();
+			System.out.println("\n"+"sum is "+series(n));
+		}
+}
+
+
