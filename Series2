@@ -1,8 +1,10 @@
 /*
 
 enter a number : 
-5
-3.0 / 2.0  6.0 / 6.0  10.0 / 24.0  15.0 / 120.0  
+3
+1.0/1.0 3.0/2.0 6.0/6.0 
+sum is 3.5
+ 
 
 */
 
@@ -14,15 +16,18 @@ public class Series2 {
 	static double series (int n) {
 		double term,num=0,den=1,sum=0;
 		int i,j;
-		for(i=2;i<=n;i++) {
+		for(i=1;i<=n;i++) {
 			num=0;den=1;
 			for(j=1;j<=i;j++) {
 				num=num+j;
 				den=den*j;
 			}
+			
+			System.out.print(num +"/"+den+" ");
+
 			term=num/den;
 			sum=sum+term;
-			System.out.print(num +" / "+ den +"  " );
+			//System.out.println(sum);
 		}
 		return sum;
 	}  
@@ -30,6 +35,6 @@ public class Series2 {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter a number : ");
 		int n=sc.nextInt();
-		series(n);
+		System.out.println("\n"+"sum is "+series(n));
 	}
 }
